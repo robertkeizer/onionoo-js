@@ -1,0 +1,7 @@
+cron
+	initialize
+	downloadDescriptors
+	
+	https://collector.torproject.org/recent/
+
+

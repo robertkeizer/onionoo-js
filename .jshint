@@ -1,0 +1,21 @@
+{
+	"curly": true,
+	"eqeqeq": true,
+	"immed": true,
+	"newcap": true,
+	"noarg": true,
+	"sub": true,
+	"unused": true,
+	"eqnull": true,
+	"node": true,
+	"globalstrict": true,
+	"strict": true,
+	"predef": [
+		"require",
+		"console",
+		"describe",
+		"it",
+		"before",
+		"after"
+	]
+}
