@@ -4,4 +4,7 @@ cron
 	
 	https://collector.torproject.org/recent/
 
-
+	updateDescriptors
+		dso
+			-> readDescriptors
+			-> readArchivedDescriptors

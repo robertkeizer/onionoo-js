@@ -1,22 +1,26 @@
 "use strict";
 
-var assert	= require( "assert" );
+var util	= require( "util" );
+//var assert	= require( "assert" );
 var onionojs	= require( "../" );
 
 describe( "GrabData", function( ){
-	it( "Fails without a callback", function( ){
-		assert.throws( function( ){
-			onionojs.GrabData( );
-		} );
+	var instance;
+
+	before( function( ){
+		instance = new onionojs.OnionoJS( );
 	} );
 
-	it( "Returns valid objects", function( cb ){
-		onionojs.GrabData( function( err, results ){
-			if( err ){ return cb( err ); }
+	after( function( ){
+		
+	} );
 
-			console.log( results );
+	it( "Fails without a callback", function( ){
 
-			return cb( null );
-		} );
+		console.log( "I have instance of ");
+		console.log( util.inspect( instance, 9, true ) );
+
+		console.log( instance.GrabData );
+
 	} );
 } );
