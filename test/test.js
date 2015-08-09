@@ -5,8 +5,7 @@ var onionojs	= require( "../" );
 
 var _validOptions = { 
 	elasticsearch: {
-		host: "localhost",
-		port: 9200,
+		host: "localhost:9200",
 		indexSearch: "onionojs-*",
 		insertIndex: "onionojs-YYYY-MMM-DD"
 	}
@@ -14,31 +13,26 @@ var _validOptions = {
 
 describe( "Ensuring options", function( ){
 
-	it( "Throws an error if undefined is passed in", function( ){
-		assert.throws( function( ){
-			new onionojs.OnionoJS( );
+	it( "Gets callback if invalid options defined", function( cb ){
+
+		new onionojs.OnionoJS( { "foo": "bar" }, function( err ){
+			if( !err ){
+				return cb( "No error was returned" );
+			}
+			return cb( null );
 		} );
 	} );
 
-	it( "Fails with invalid options", function( ){
-
-		assert.throws( function( ){
-			new onionojs.OnionoJS( { "foo": "bar" } );
-		} );
+	it( "Can be created with valid options", function( cb ){
+		new onionojs.OnionoJS( _validOptions, cb );
 	} );
-
-	it( "Can be created with valid options", function( ){
-		new onionojs.OnionoJS( _validOptions );
-	} );
-
 } );
 
-/*
 describe( "GrabData", function( ){
 	var instance;
 
-	before( function( ){
-		instance = new onionojs.OnionoJS( { "foo": "bar" );
+	before( function( cb ){
+		instance = new onionojs.OnionoJS( _validOptions, cb );
 	} );
 
 	after( function( ){
@@ -51,5 +45,13 @@ describe( "GrabData", function( ){
 		} );
 	} );
 
+	it( "Works with valid options", function( cb ){
+		instance.GrabData( function( err, result ){
+			if( err ){ return cb( err ); }
+			console.log( "TEST HAS RESULT O F" );
+			console.log( result );
+			return cb( null );
+		} );
+	} );
+
 } );
-*/
