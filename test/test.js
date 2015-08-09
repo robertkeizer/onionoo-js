@@ -7,7 +7,8 @@ var _validOptions = {
 	elasticsearch: {
 		host: "localhost",
 		port: 9200,
-		indexPrefix: "onionojs-"
+		indexSearch: "onionojs-*",
+		insertIndex: "onionojs-YYYY-MMM-DD"
 	}
 };
 
