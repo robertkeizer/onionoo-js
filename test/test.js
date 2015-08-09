@@ -8,7 +8,9 @@ var _validOptions = {
 		host: "localhost:9200",
 		indexSearch: "onionojs-*",
 		insertIndex: "onionojs-YYYY-MMM-DD"
-	}
+	},
+	downloadLocation: "/tmp",
+	removeRawDownloads: true
 };
 
 describe( "Ensuring options", function( ){
