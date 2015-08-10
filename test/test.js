@@ -1,6 +1,6 @@
 "use strict";
 
-var assert	= require( "assert" );
+//var assert	= require( "assert" );
 var onionojs	= require( "../" );
 
 var _validOptions = { 
@@ -30,7 +30,7 @@ describe( "Ensuring options", function( ){
 	} );
 } );
 
-describe( "GrabData", function( ){
+describe( "UpdateDatabase", function( ){
 	var instance;
 
 	before( function( cb ){
@@ -41,14 +41,8 @@ describe( "GrabData", function( ){
 		
 	} );
 
-	it( "Fails without a callback", function( ){
-		assert.throws( function( ){
-			instance.GrabData( );
-		} );
-	} );
-
 	it( "Works with valid options", function( cb ){
-		instance.GrabData( function( err, result ){
+		instance.UpdateDatabase( function( err, result ){
 			if( err ){ return cb( err ); }
 			console.log( "TEST HAS RESULT O F" );
 			console.log( result );
